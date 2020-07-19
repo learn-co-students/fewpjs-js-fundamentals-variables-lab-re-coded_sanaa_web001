@@ -2,7 +2,7 @@ const fs = require('file-system');
 const jsdom = require('mocha-jsdom');
 const path = require('path');
 const babel = require('babel-core');
-const companyName = "Scuber";
+let companyName = 'Scuber';
 
 const js = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
 
