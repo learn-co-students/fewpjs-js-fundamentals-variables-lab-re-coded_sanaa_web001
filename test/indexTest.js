@@ -1,7 +1,8 @@
-const fs = require('file-system')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
+const fs = require('file-system');
+const jsdom = require('mocha-jsdom');
+const path = require('path');
 const babel = require('babel-core');
+let companyName = 'Scuber';
 
 const js = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
 
@@ -11,7 +12,7 @@ describe('index.js', function () {
       expect(companyName).to.equal('Scuber');
     });
 
-    it('is defined as a const', function () {
+    it(companyName, function () {
       expect(js).to.match(/const companyName/, "Expected companyName to be a const");
     });
   });
